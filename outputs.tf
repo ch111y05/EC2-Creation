@@ -29,6 +29,11 @@ output "dev_node_instance_id" {
   value       = aws_instance.dev_node.id
 }
 
+output "iam_instance_profile_id" {
+  description = "ID of the IAM instance profile attached to the EC2 instance."
+  value       = aws_iam_instance_profile.ssm_instance_profile.id
+}
+
 output "ami_id" {
   description = "AMI ID used for the EC2 instance."
   value       = aws_instance.dev_node.ami
