@@ -28,13 +28,3 @@ output "dev_node_instance_id" {
   description = "The ID of the created EC2 instance."
   value       = aws_instance.dev_node.id
 }
-
-output "ami" {
-  description = "AMI ID that was used to create the instance"
-  value = try(
-    aws_instance.this[0].ami,
-    aws_instance.ignore_ami[0].ami,
-    aws_spot_instance_request.this[0].ami,
-    null,
-  )
-}
